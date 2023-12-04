@@ -1,0 +1,117 @@
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query Books {
+  books {
+    id
+    title
+    description
+    author {
+      name
+    }
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query BookById {
+  getBookById(id: "f70c8c4b-339f-43db-9c54-7a5108f22e80") {
+    id
+    title
+    description
+    author {
+      name
+    }
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query BookByTitle {
+  searchBooksByTitle(title: "cid") {
+    id
+    title
+    description
+    author {
+      name
+    }
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation Book {
+  createBook(
+    input: {
+      title: "cidade de papel"
+      authorId: "2f6c32a0-9e46-4fa2-bed1-85ee93e7859a"
+      description: "book about teen"
+    }
+  ) {
+    id
+    title
+    description
+    author {
+      name
+    }
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation UpdateBook {
+  updateBook(
+    id: "f70c8c4b-339f-43db-9c54-7a5108f22e80"
+    title: "Cidade de Papel"
+  ) {
+    id
+    title
+    description
+    author {
+      name
+    }
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation DeleteBook {
+  deleteBook(id: "f70c8c4b-339f-43db-9c54-7a5108f22e80")
+}

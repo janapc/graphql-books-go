@@ -1,0 +1,95 @@
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query Authors {
+  authors {
+    name
+    id
+    createdAt
+    updatedAt,
+    books {
+      id
+      title
+    }
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query AuthorById {
+  getAuthorById(id: "14069ae3-6418-454c-a108-82fbcc876cb1") {
+    name
+    id
+    createdAt
+    updatedAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+query AuthorByName {
+  searchAuthorsByName(name: "jho") {
+    name
+    id
+    createdAt
+    updatedAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation Author {
+  createAuthor(input: { name: "jhon green" }) {
+    id
+    name
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation UpdateAuthor {
+  updateAuthor(
+    id: "14069ae3-6418-454c-a108-82fbcc876cb1"
+    name: "Jhon Green"
+  ) {
+    id
+    name
+    updatedAt
+    createdAt
+  }
+}
+
+###
+
+POST http://localhost:8080/bookstore
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFlYWNkYzQ1LTM5OTQtNDFkZS05ZmY4LTMwODE2OGI5NzUzOCIsImVtYWlsIjoidGVzdGVAdC5jb20iLCJleHAiOjE3MDE3NzQ5ODh9.dtHui8O6mcBowPD0F2noTcNbMMvKXznIDGEL16pkJWA
+X-REQUEST-TYPE: GraphQL
+
+mutation DeleteAuthor {
+  deleteAuthor(id: "14069ae3-6418-454c-a108-82fbcc876cb1")
+}

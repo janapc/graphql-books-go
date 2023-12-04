@@ -1,0 +1,89 @@
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query Users {
+  users {
+    id
+    email
+    createdAt
+    updatedAt
+    deletedAt
+  }
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query UserById {
+  getUserById(id: "f395e676-67d9-4409-9b6a-0b0111756441") {
+    id
+    email
+    createdAt
+    updatedAt
+    deletedAt
+  }
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query UserByEmail {
+  getUserByEmail(email: "test1@test.com") {
+    id
+    email
+    createdAt
+    updatedAt
+    deletedAt
+  }
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation User {
+  createUser(input: { email: "test1@test.com", password: "12345678" }) {
+    id
+  }
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation LoginUser {
+  loginUser(email: "teste@t.com", password: "12332112")
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation UpdateUser {
+  updateUser(id: "aeacdc45-3994-41de-9ff8-308168b97538", password: "12332112") {
+    id
+  }
+}
+
+###
+
+POST http://localhost:4000/user
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation DeleteUser {
+  deleteUser(id: "f395e676-67d9-4409-9b6a-0b0111756441")
+}
